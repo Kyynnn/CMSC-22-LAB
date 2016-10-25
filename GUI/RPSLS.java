@@ -46,27 +46,27 @@ public class RPSLS extends Frame {
                 String computerAction = computerSelectAction();
                 int roundWinID = roundVictor(playerAction, computerAction);
                 result.append("\n Player chose: " + playerAction.toUpperCase());
-		            result.append("\n Computer chose: " + computerAction.toUpperCase());
+		result.append("\n Computer chose: " + computerAction.toUpperCase());
 				
-		            if (roundWinID == 1) {
+		if (roundWinID == 1) {
                     PlayerScore.setText(String.valueOf(++playerScore));
-               			result.append("\n\n YOU WIN THIS ROUND!");
-	            	} else if (roundWinID == 0) {
+               		result.append("\n\n YOU WIN THIS ROUND!");
+	        } else if (roundWinID == 0) {
                     ComputerScore.setText(String.valueOf(++computerScore));
                     result.append("\n\n YOU LOSE THIS ROUND!");
-            		} else {
+            	} else {
                     result.append("\n\n IT'S A TIE!");
                 }
 				
-		            if (isGameOver()) {
+		if (isGameOver()) {
                     action.setEnabled(false);
                     if (roundWinID == 1) {
-		                  	gameOver.setText("Game Over! Player won.");
+		  	gameOver.setText("Game Over! Player won.");
                     } else {
-		                  	gameOver.setText("Game Over! Computer won.");
+		        gameOver.setText("Game Over! Computer won.");
                     }
                     GameOver.setVisible(true);
-		            }
+		}
             }
         });
         
@@ -80,30 +80,30 @@ public class RPSLS extends Frame {
         
         GameOver.setLayout(new FlowLayout());
         GameOver.add(gameOver);
-	      GameOver.add(reset);
-	      GameOver.setTitle("Game Over!");
-	      GameOver.setSize(200, 120);
+	GameOver.add(reset);
+	GameOver.setTitle("Game Over!");
+	GameOver.setSize(200, 120);
 		
       	add(playerChoice);
-	      add(rock);
-	      add(paper);
-	      add(scissors);
+	add(rock);
+	add(paper);
+	add(scissors);
       	add(lizard);
-	      add(spock);
-	      add(result);
-	      add(action);
+	add(spock);
+	add(result);
+	add(action);
       	add(scorePlayer);
-	      add(PlayerScore);
-	      add(scoreComputer);
-	      add(ComputerScore);
+	add(PlayerScore);
+	add(scoreComputer);
+	add(ComputerScore);
 		
-	      setTitle("Rock Paper Scissors Lizard Spock!");
-	      setSize(300, 370);
-	      setVisible(true);
+	setTitle("Rock Paper Scissors Lizard Spock!");
+	setSize(300, 370);
+	setVisible(true);
 		
-	      addWindowListener(new WindowAdapter() {
+	addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
-		            System.exit(0);
+		System.exit(0);
             }
         });
     } 
